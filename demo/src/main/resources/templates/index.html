@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js"    
+          integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" 
+          crossorigin="anonymous">
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 th:text="${message}">Welcome </h1>
+    <form action="#" method="post"
+        hx-post="http://localhost:8080/createShortenUrl"
+        hx-swap="beforeend"
+        hx-target="#result"
+
+    
+    >
+         <input type="text" name="url" id="url" placeholder="Input URL">
+         <input type="submit" value="generateUrl">
+    </form>
+   <div id="result"></div>
+</body>
+</html>
